@@ -72,7 +72,6 @@ public abstract class DemonEntityMixin extends BWHostileEntity implements Tameab
         return super.getTarget();
     }
 
-
     @Inject(method = "initGoals", at = @At("HEAD"), cancellable = true) //look i did the bad
     private void initGoals(CallbackInfo ci) {
         this.goalSelector.add(0, new SwimGoal(this));
@@ -90,10 +89,6 @@ public abstract class DemonEntityMixin extends BWHostileEntity implements Tameab
         this.targetSelector.add(2, new DemonAttackWithOwnerGoal((DemonEntity) (TameableDemon) this));
         ci.cancel();
     }
-
-
-
-
 
     @Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
     private void interactMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
@@ -174,7 +169,6 @@ public abstract class DemonEntityMixin extends BWHostileEntity implements Tameab
         dataTracker.startTracking(OWNER_UUID, Optional.empty());
     }
 
-    @Environment(EnvType.CLIENT)
     @Unique
     public void showEmoteParticle(boolean positive) {
         ParticleEffect particleEffect = ParticleTypes.HEART;

@@ -16,10 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MobEntity.class)
 public abstract class MobEntityMixin {
-
     @Shadow @Nullable public abstract LivingEntity getTarget();
 
-    @Environment(EnvType.CLIENT)
     @Inject(method = "handleStatus", at = @At("HEAD"))
     public void handleStatus(byte status, CallbackInfo ci) {
         if (this instanceof TameableDemon) {

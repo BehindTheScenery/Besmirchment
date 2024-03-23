@@ -28,7 +28,6 @@ public interface TameableDemon {
 
     }
 
-    @Environment(EnvType.CLIENT)
     void showEmoteParticle(boolean positive);
 
     default boolean canAttackWithOwner(LivingEntity target, LivingEntity owner) {

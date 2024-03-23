@@ -40,7 +40,6 @@ public class InfectiousSpitEntity extends LlamaSpitEntity implements DyeableEnti
         initColor();
     }
 
-    @Environment(EnvType.CLIENT)
     public InfectiousSpitEntity(World world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
         this(BSMEntityTypes.INFECTIOUS_SPIT, world);
         this.setPosition(x, y, z);

@@ -28,9 +28,6 @@ import java.util.List;
 
 @Mixin(value = BewitchmentAPI.class, remap = false)
 public class BewitchmentAPIMixin {
-
-
-    @Environment(EnvType.CLIENT)
     @Inject(method = "getTransformedPlayerEntity", at = @At("RETURN"), cancellable = true)
     private static void getTransformedPlayerEntity(PlayerEntity player, CallbackInfoReturnable<LivingEntity> cir){
         if (BSMTransformations.isWerepyre(player, false)){
